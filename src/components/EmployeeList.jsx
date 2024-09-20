@@ -13,7 +13,6 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
 
@@ -32,6 +31,7 @@ const EmployeeList = () => {
     });
   };
 
+  
   useEffect(() => {
     init();
   }, []);
@@ -40,7 +40,7 @@ const EmployeeList = () => {
     <TableContainer component={Paper}>
       <br />
       <Link
-        to="employee/add"
+        to="/employee/add"
         style={{ textDecoration: "none", marginBottom: "1rem" }}
       >
         <Button
