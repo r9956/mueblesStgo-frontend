@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import FileUpload from '../components/FileUpload'
+import ClockDataFileUpload from '../components/ClockDataFileUpload'
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
         <h1>Welcome to Muebles Stgo</h1>
         <p>hola</p>
           
-        <FileUpload 
+        <ClockDataFileUpload 
           config={{
             label: 'Upload Clock Data',
             accept: '.txt',
