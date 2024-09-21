@@ -170,7 +170,7 @@ const ClockDataFileUpload = ({ config }) => {
   return (
     <Container maxWidth="xs">
       <Paper
-        elevation={3}
+        elevation={2}
         style={{
           padding: '42px',
           width: '100%',
