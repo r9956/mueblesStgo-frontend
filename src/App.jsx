@@ -6,6 +6,7 @@ import AddEditEmployee from './components/AddEditEmployee'
 import ClockData from './pages/ClockData'
 import { Container } from '@mui/material'
 import DrawerAppBar from './components/AppBar'
+import ExtraHours from './pages/ExtraHours'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/employee/list" element={<EmployeeList />} />
           <Route path="/employee/add" element={<AddEditEmployee />} />
+          <Route path="/extra-hours" element={<ExtraHours />} />
           <Route path="/clock-data" element={<ClockData />} />
         </Routes>
       </Router>

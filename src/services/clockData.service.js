@@ -1,4 +1,3 @@
-// 'src/services/clockDataservice.js'
 import httpClient from '../http-common.js'
 
 const uploadClockData = (file) => {
