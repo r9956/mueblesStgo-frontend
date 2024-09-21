@@ -6,7 +6,12 @@ import { useNavigate } from 'react-router-dom';
 
 const FileUploadForm = ({ onFileChange, onUploadClick, config }) => (
   <>
-    <Grid item style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
+    <Grid item style={{ 
+      marginTop: 'auto', 
+      display: 'flex', 
+      justifyContent: 'center'
+      }}>
+
       <Box sx={{ 
         p: 2, 
         height: '100px', 
@@ -86,7 +91,7 @@ const WarningOrErrorMessage = ({ message, onReset }) => (
     container
     direction="column"
     justifyContent="space-between"
-    style={{ flex: 1 }} // Ensure the grid fills the available space
+    style={{ flex: 1 }}
   >
     <Grid item style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
       <Typography
@@ -171,10 +176,10 @@ const ClockDataFileUpload = ({ config }) => {
           width: '100%',
           height: '375px',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'column'
         }}
       >
-        {/* Removed spacing={6}, using gap in sx for better dynamic control */}
+  
         <Grid container direction="column" style={{ flex: 1 }} sx={{ gap: 3 }}>
           <Grid item style={{ display: 'flex', justifyContent: 'center' }}>
             <Typography variant="h6">{config.label}</Typography>
