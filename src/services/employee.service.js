@@ -1,10 +1,10 @@
-import httpClient from '../http-common.js';
+import httpClient from '../http-common.js'
 
 const getAll = () => {
-    return httpClient.get("employees/getAll");
+    return httpClient.get("employees/getAll")
 }
 const create = data => {
-    return httpClient.post("/employees/add", data);
+    return httpClient.post("/employees/add", data)
 }
 
 const employeeService = {
