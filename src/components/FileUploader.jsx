@@ -36,11 +36,11 @@ const FileUpload = ({ onFileUploaded }) => {
       if (validTypes.includes(selectedFile.type)) {
         setFile(selectedFile);
         setErrorMessage('');
-        onFileUploaded(selectedFile);  // Notify parent of the uploaded file
+        onFileUploaded(selectedFile); 
       } else {
         setErrorMessage('Tipo de archivo no permitido. Solo se permiten documentos o imágenes (JPG, PNG).');
         setFile(null);
-        onFileUploaded(null);  // Notify parent to clear the file
+        onFileUploaded(null);
       }
     }
   };

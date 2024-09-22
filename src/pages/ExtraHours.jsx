@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Container, Paper } from '@mui/material';
+import { Button, Container, Paper, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import DatePicker from '../components/DatePicker';
+import DatePickerComponent from '../components/DatePicker';
 import RutInputForm from '../components/RutInputForm';
 import FileUpload from '../components/FileUploader';
 import extraHourAuthorization from '../services/extraHoursAuthorization.service.js';
@@ -16,9 +16,9 @@ export default function ExtraHours() {
   };
 
   const handleSend = async () => {
-    console.log('Rut:', rut);
-    console.log('Date:', date);
-    console.log('File:', file);
+    //console.log('Rut:', rut);
+    //console.log('Date:', date);
+    //console.log('File:', file);
 
     if (!rut || !date || !file) {
       alert('Por favor, completa todos los campos.');
@@ -40,11 +40,14 @@ export default function ExtraHours() {
     <Container maxWidth="xs">
       <Paper elevation={1} style={{ padding: '24px' }}>
         <Grid container spacing={3} direction='column' alignItems="center">
+          <Grid sx={{mt:2, mb: 2}}>
+            <Typography variant="h6">Ingresar autorización de horas extra</Typography>
+          </Grid>
           <Grid item xs={12} sm={6} style={{ width: '223px', maxWidth: '300px' }}>
             <RutInputForm onRutChange={setRut} />
           </Grid>
           <Grid item xs={12} sm={6} style={{ width: '223px', maxWidth: '300px' }}>
-            <DatePicker onDateChange={setDate} />
+            <DatePickerComponent onDateChange={setDate} />
           </Grid>
           <Grid>
             <FileUpload onFileUploaded={handleFileUploaded} />
@@ -62,5 +65,5 @@ export default function ExtraHours() {
         </Grid>
       </Paper>
     </Container>
-  );
+  )
 }
