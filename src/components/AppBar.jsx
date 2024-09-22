@@ -29,7 +29,7 @@ const navItems = [
   { name: 'Home', icon: <HomeOutlinedIcon />, path: '/' },
   { name: 'Negocio', icon: <BusinessIcon />, path: '/business' },
   { name: 'Planilla de sueldos', icon: <AttachMoneyIcon />, path: '/payroll' },
-  { name: 'Empleados', icon: <PeopleOutlinedIcon />, path: '/employees' },
+  { name: 'Empleados', icon: <PeopleOutlinedIcon />, path: '/employee/list' },
   { name: 'Horas extra', icon: <HourglassEmptyIcon />, path: '/extra-hours' },
   { name: 'Ausencias', icon: <WorkOffOutlinedIcon />, path: '/absences' },
   { name: 'Cargar reloj', icon: <AccessTimeIcon />, path: '/clock-data' }

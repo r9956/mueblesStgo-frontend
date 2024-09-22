@@ -5,6 +5,7 @@ import DatePickerComponent from '../components/DatePicker';
 import RutInputForm from '../components/RutInputForm';
 import FileUpload from '../components/FileUploader';
 import extraHourAuthorization from '../services/extraHoursAuthorization.service.js';
+import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
 
 export default function ExtraHours() {
   const [file, setFile] = useState(null);
@@ -57,6 +58,7 @@ export default function ExtraHours() {
               variant="contained"
               onClick={handleSend}
               style={{ width: 'auto' }}
+              startIcon={<UploadFileOutlinedIcon />}
               disabled={!rut || !date || !file}
             >
               Enviar

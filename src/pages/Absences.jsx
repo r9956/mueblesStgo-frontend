@@ -5,6 +5,7 @@ import DatePickerComponent from '../components/DatePicker';
 import RutInputForm from '../components/RutInputForm';
 import FileUpload from '../components/FileUploader';
 import absenceExcuse from '../services/absenceExcuse.service';
+import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
 
 export default function absences() {
     const [file, setFile] = useState(null);
@@ -68,6 +69,7 @@ export default function absences() {
                     variant="contained"
                     onClick={handleSend}
                     style={{ width: 'auto' }}
+                    startIcon={<UploadFileOutlinedIcon/>}
                     disabled={!rut || !fromDate || !toDate ||!file}
                     >
                     Enviar

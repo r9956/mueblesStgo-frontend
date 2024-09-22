@@ -3,6 +3,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import "dayjs/locale/es";
 
 export default function DatePickerComponent({ label = 'Fecha', onDateChange }) {
   const [selectedDate, setSelectedDate] = React.useState(null);
@@ -15,7 +16,7 @@ export default function DatePickerComponent({ label = 'Fecha', onDateChange }) {
   };
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="es">
       <DemoContainer components={['DatePicker']}>
         <DatePicker
           label={label}

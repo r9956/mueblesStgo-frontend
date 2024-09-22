@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Button, Box, Paper, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import uploadClockData from '../services/clockData.service';
+import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
 
 const FileUploadForm = ({ onFileChange, onUploadClick, config, file }) => (
   <>
@@ -33,6 +34,7 @@ const FileUploadForm = ({ onFileChange, onUploadClick, config, file }) => (
         onClick={onUploadClick}
         style={{ width: 'auto' }}
         disabled={!file}
+        startIcon={<UploadFileOutlinedIcon />}
       >
         Subir archivo
       </Button>
