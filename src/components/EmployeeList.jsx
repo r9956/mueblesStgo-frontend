@@ -173,7 +173,7 @@ const EmployeeList = () => {
         onRowsPerPageChange={handleChangeRowsPerPage}
         labelRowsPerPage="Cantidad por página"
         labelDisplayedRows={({ from, to, count }) => `${from}-${to} de ${count}`}
-        labelPagination="Páginas"
+        labelpagination="Páginas"
       />
     </TableContainer>
   );

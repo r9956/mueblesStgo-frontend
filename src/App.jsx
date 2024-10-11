@@ -18,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/employee/list" element={<EmployeeList />} />
           <Route path="/employee/add" element={<AddEditEmployee />} />
+          <Route path="/employee/edit/:id" element={<AddEditEmployee/>} />
           <Route path="/extra-hours" element={<ExtraHours />} />
           <Route path="/absences" element={<Absences />} />
           <Route path="/clock-data" element={<ClockData />} />
