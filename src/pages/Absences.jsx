@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
-import { Button, Container, Paper, Typography } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+import { Box, Button, Container, Paper, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import DatePickerComponent from '../components/DatePicker';
 import RutInputForm from '../components/RutInputForm';
 import FileUpload from '../components/FileUploader';
 import absenceExcuse from '../services/absenceExcuse.service';
 import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
+import BackToHomeButton from '../components/CenteredButton';
+import CenteredButton from '../components/CenteredButton';
 
 export default function absences() {
     const [file, setFile] = useState(null);
     const [rut, setRut] = useState('');
     const [fromDate, setFromDate] = useState(null);
     const [toDate, setToDate] = useState(null);
+
+    const navigate = useNavigate();
 
     const handleFileUploaded = (uploadedFile) => {
         setFile(uploadedFile);
@@ -24,7 +29,6 @@ export default function absences() {
         }
     
         try {
-            // Call the backend service and wait for the response
             const response = await absenceExcuse(
                 rut, 
                 fromDate.format('YYYY-MM-DD'), 
@@ -32,13 +36,11 @@ export default function absences() {
                 file
             );
     
-            // Backend success response
             const successMessage = response.data || 'Datos enviados correctamente.';
             alert(successMessage);
             console.log('Response:', successMessage);
     
         } catch (error) {
-            // Backend error response
             const errorMessage = error.response?.data || 'Error al enviar los datos.';
             alert(errorMessage);
             console.error('Error:', errorMessage);
@@ -77,6 +79,7 @@ export default function absences() {
                 </Grid>
                 </Grid>
             </Paper>
+            <CenteredButton buttonLabel="Volver a inicio" targetPath="/" />
         </Container>
     )
 }

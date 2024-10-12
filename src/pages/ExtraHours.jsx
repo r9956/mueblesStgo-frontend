@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Button, Container, Paper, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import DatePickerComponent from '../components/DatePicker';
@@ -6,11 +7,14 @@ import RutInputForm from '../components/RutInputForm';
 import FileUpload from '../components/FileUploader';
 import extraHourAuthorization from '../services/extraHoursAuthorization.service.js';
 import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
+import CenteredButton from '../components/CenteredButton.jsx';
 
 export default function ExtraHours() {
   const [file, setFile] = useState(null);
   const [rut, setRut] = useState('');
   const [date, setDate] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleFileUploaded = (uploadedFile) => {
     setFile(uploadedFile);
@@ -44,10 +48,10 @@ export default function ExtraHours() {
           <Grid sx={{mt:2, mb: 2}}>
             <Typography variant="h6">Ingresar autorización de horas extra</Typography>
           </Grid>
-          <Grid item xs={12} sm={6} style={{ width: '223px', maxWidth: '300px' }}>
+          <Grid xs={12} sm={6} style={{ width: '223px', maxWidth: '300px' }}>
             <RutInputForm onRutChange={setRut} />
           </Grid>
-          <Grid item xs={12} sm={6} style={{ width: '223px', maxWidth: '300px' }}>
+          <Grid xs={12} sm={6} style={{ width: '223px', maxWidth: '300px' }}>
             <DatePickerComponent onDateChange={setDate} />
           </Grid>
           <Grid>
@@ -66,6 +70,7 @@ export default function ExtraHours() {
           </Grid>
         </Grid>
       </Paper>
+      <CenteredButton buttonLabel="Volver a inicio" targetPath="/" />
     </Container>
   )
 }

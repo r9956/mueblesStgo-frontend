@@ -14,6 +14,7 @@ import Button from '@mui/material/Button'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
+import CenteredButton from './CenteredButton';
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
@@ -86,96 +87,99 @@ const EmployeeList = () => {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <br />
-      <Grid container justifyContent="center">
-      <Link
-        to="/employee/add"
-        style={{ textDecoration: "none"}}
-      >
-        <Button
-          variant="contained"
-          color="primary"
-          startIcon={<PersonAddIcon />}
+    <>
+      <TableContainer component={Paper}>
+        <br />
+        <Grid container justifyContent="center">
+        <Link
+          to="/employee/add"
+          style={{ textDecoration: "none"}}
         >
-          Añadir empleado
-        </Button>
-      </Link>
-      </Grid>
-      <br /> <br />
-      <Table sx={{ minWIdth: 650, marginBottom: 2 }} size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>
-              Rut
-            </TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>
-              Nombre
-            </TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>
-              Edad
-            </TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>
-              Años de servicio
-            </TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>
-              Categoría
-            </TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>
-              Operaciones
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {paginatedEmployees.map((employee) =>(
-            <TableRow
-              key={employee.id}
-              sx={{ "&:last-child td, &:last-child th": { border:0 } }}
-            >
-              <TableCell align="center">{employee.rut}</TableCell>
-              <TableCell align="left">{employee.names} {employee.lastNames}</TableCell>
-              <TableCell align="center">{calculateYears(employee.birthDate)}</TableCell>
-              <TableCell align="center">{calculateYears(employee.startDate)}</TableCell>
-              <TableCell align="center">{employee.category}</TableCell>
-              <TableCell>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="small"
-                  onClick={() => handleEdit(employee.id)}
-                  style={{ marginLeft: "0.5rem" }}
-                  startIcon={<EditIcon />}
-                >
-                  Editar
-                </Button>
-                <Button
-                  variant="contained"
-                  color="error"
-                  size="small"
-                  onClick={() => handleDelete(employee.id)}
-                  style={{ marginLeft: "0.5rem" }}
-                  startIcon={<DeleteIcon />}
-                >
-                  Eliminar
-                </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            startIcon={<PersonAddIcon />}
+          >
+            Añadir empleado
+          </Button>
+        </Link>
+        </Grid>
+        <br /> <br />
+        <Table sx={{ minWIdth: 650, marginBottom: 2 }} size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Rut
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Nombre
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Edad
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Años de servicio
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Categoría
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Operaciones
               </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-        component="div"
-        count={employees.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        labelRowsPerPage="Cantidad por página"
-        labelDisplayedRows={({ from, to, count }) => `${from}-${to} de ${count}`}
-        labelpagination="Páginas"
-      />
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {paginatedEmployees.map((employee) =>(
+              <TableRow
+                key={employee.id}
+                sx={{ "&:last-child td, &:last-child th": { border:0 } }}
+              >
+                <TableCell align="center">{employee.rut}</TableCell>
+                <TableCell align="left">{employee.names} {employee.lastNames}</TableCell>
+                <TableCell align="center">{calculateYears(employee.birthDate)}</TableCell>
+                <TableCell align="center">{calculateYears(employee.startDate)}</TableCell>
+                <TableCell align="center">{employee.category}</TableCell>
+                <TableCell>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="small"
+                    onClick={() => handleEdit(employee.id)}
+                    style={{ marginLeft: "0.5rem" }}
+                    startIcon={<EditIcon />}
+                  >
+                    Editar
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="error"
+                    size="small"
+                    onClick={() => handleDelete(employee.id)}
+                    style={{ marginLeft: "0.5rem" }}
+                    startIcon={<DeleteIcon />}
+                  >
+                    Eliminar
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={employees.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          labelRowsPerPage="Cantidad por página"
+          labelDisplayedRows={({ from, to, count }) => `${from}-${to} de ${count}`}
+          labelpagination="Páginas"
+        />
+      </TableContainer>
+      <CenteredButton buttonLabel="Volver a inicio" targetPath="/" sx={{ marginTop: 2 }} />
+      </>
   );
 };
 

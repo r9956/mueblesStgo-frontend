@@ -152,7 +152,7 @@ const AddEditEmployee = () => {
         minHeight="20vh"
       >
         <Link to="/employee/list">
-          <Button variant="outlined">Volver atrás</Button>
+          <Button variant="text">Volver atrás</Button>
         </Link>
       </Box>
     </Container>

@@ -1,3 +1,4 @@
+import CenteredButton from '../components/CenteredButton';
 import ClockDataFileUpload from '../components/ClockDataFileUpload';
 
 export default function ClockData() {
@@ -12,6 +13,7 @@ export default function ClockData() {
                 }
             }} 
         />
+        <CenteredButton buttonLabel="Volver a inicio" targetPath="/" />
         </>
     )
 }

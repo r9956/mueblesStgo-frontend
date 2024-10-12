@@ -6,7 +6,7 @@ import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
 
 const FileUploadForm = ({ onFileChange, onUploadClick, config, file }) => (
   <>
-    <Grid item style={{ 
+    <Grid style={{ 
       marginTop: 'auto', 
       display: 'flex', 
       justifyContent: 'center'
@@ -28,7 +28,7 @@ const FileUploadForm = ({ onFileChange, onUploadClick, config, file }) => (
         />
       </Box>
     </Grid>
-    <Grid item style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
+    <Grid style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
       <Button
         variant="contained"
         onClick={onUploadClick}
@@ -49,7 +49,7 @@ const SuccessMessage = ({ fileName, successMessage, onReset }) => (
     justifyContent="space-between"
     style={{ flex: 1 }}
   >
-    <Grid item style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
+    <Grid style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
       <Box sx={{
           p: 2,
           border: '1px dashed grey',
@@ -63,7 +63,7 @@ const SuccessMessage = ({ fileName, successMessage, onReset }) => (
           </Typography>
       </Box>
     </Grid>
-    <Grid item style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
+    <Grid style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
       <Box sx={{ 
           p: 2, 
           display: 'flex',
@@ -75,7 +75,7 @@ const SuccessMessage = ({ fileName, successMessage, onReset }) => (
         </Typography>
       </Box>
     </Grid>
-    <Grid item style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
+    <Grid style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
       <Button
         variant="outlined"
         onClick={onReset}
@@ -94,7 +94,7 @@ const WarningOrErrorMessage = ({ message, onReset }) => (
     justifyContent="space-between"
     style={{ flex: 1 }}
   >
-    <Grid item style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
+    <Grid style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
       <Typography
         variant="caption"
         color={message.startsWith('ADVERTENCIA') ? 'orange' : 'error'}
@@ -103,7 +103,7 @@ const WarningOrErrorMessage = ({ message, onReset }) => (
         {message}
       </Typography>
     </Grid>
-    <Grid item style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
+    <Grid style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
       <Button
         variant="outlined"
         onClick={onReset}
@@ -176,7 +176,7 @@ const ClockDataFileUpload = ({ config }) => {
         }}
       >
         <Grid container direction="column" style={{ flex: 1 }} sx={{ gap: 3 }}>
-          <Grid item style={{ display: 'flex', justifyContent: 'center' }}>
+          <Grid style={{ display: 'flex', justifyContent: 'center' }}>
             <Typography variant="h6">{config.label}</Typography>
           </Grid>
 

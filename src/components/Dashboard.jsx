@@ -10,8 +10,8 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime'
 
 const Dashboard = () => {
   const cards = [
-    { title: 'Negocio', icon: BusinessIcon, nav: '/business' },
-    { title: 'Planilla de sueldos', icon: AttachMoneyIcon, nav: '/payroll' },
+    { title: 'Calcular planilla', icon: BusinessIcon, nav: '/payroll/calculate' },
+    { title: 'Planillas de sueldos', icon: AttachMoneyIcon, nav: '/payroll/list' },
     { title: 'Empleados', icon: PeopleOutlinedIcon, nav: '/employee/list' },
     { title: 'Horas extra', icon: HourglassEmptyIcon, nav: '/extra-hours' },
     { title: 'Ausencias', icon: WorkOffOutlinedIcon, nav: '/absences' },

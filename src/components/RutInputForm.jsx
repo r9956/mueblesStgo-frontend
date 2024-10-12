@@ -7,7 +7,6 @@ export default function RutInputForm({ onRutChange, initialRut = '' }) {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  // Update the input field if there's an initial RUT provided (for editing)
   useEffect(() => {
     if (initialRut) {
       const formattedRut = format.dotDash(initialRut);
@@ -22,7 +21,6 @@ export default function RutInputForm({ onRutChange, initialRut = '' }) {
     setRut(formattedRut);
     onRutChange(formattedRut);
 
-    // Validate the RUT format
     const regex = /^\d{1,2}\.\d{3}\.\d{3}-[\dK]$/;
     if (formattedRut.length > 0 && !regex.test(formattedRut)) {
       setError(true);
