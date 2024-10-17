@@ -27,8 +27,8 @@ const drawerWidth = 240;
 
 const navItems = [
   { name: 'Home', icon: <HomeOutlinedIcon />, path: '/' },
-  { name: 'Negocio', icon: <BusinessIcon />, path: '/business' },
-  { name: 'Planilla de sueldos', icon: <AttachMoneyIcon />, path: '/payroll' },
+  { name: 'Calcular planilla', icon: <BusinessIcon />, path: '/payroll/calculate' },
+  { name: 'Planilla de sueldos', icon: <AttachMoneyIcon />, path: '/payroll/list' },
   { name: 'Empleados', icon: <PeopleOutlinedIcon />, path: '/employee/list' },
   { name: 'Horas extra', icon: <HourglassEmptyIcon />, path: '/extra-hours' },
   { name: 'Ausencias', icon: <WorkOffOutlinedIcon />, path: '/absences' },
