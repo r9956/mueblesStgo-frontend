@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid2'
 
 const NavegationCard = ({ title, icon: Icon, nav }) => {
   const navigate = useNavigate();
-  const [elevation, setElevation] = useState(1);  // State to control elevation
+  const [elevation, setElevation] = useState(1);  
 
   const handleClick = () => {
     navigate(nav);
@@ -30,7 +30,7 @@ const NavegationCard = ({ title, icon: Icon, nav }) => {
         onMouseLeave={() => setElevation(1)}
       >
         {Icon && <Icon style={{ fontSize: '40px', color: '#555' }} />}
-        <Typography variant="h6" sx={{ color: '#555', mt: 1 }}> {/* Softer text color */}
+        <Typography variant="h6" sx={{ color: '#555', mt: 1 }}>
           {title}
         </Typography>
       </Paper>

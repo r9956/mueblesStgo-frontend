@@ -136,7 +136,6 @@ function DrawerAppBar(props) {
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Typography>
-          {/* Content goes here */}
         </Typography>
       </Box>
     </Box>
